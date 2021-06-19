@@ -15,7 +15,7 @@ public class BERT {
     static let aModel = try! MLModel(contentsOf: url)
     
     var bertModel: BERTQAFP16 = BERTQAFP16(model: aModel)
-    func findAnswer(for question: String, in document: String) -> Substring {
+    public func findAnswer(for question: String, in document: String) -> Substring {
         // Prepare the input for the BERT model.
         let bertInput = BERTInput(documentString: document, questionString: question)
         
