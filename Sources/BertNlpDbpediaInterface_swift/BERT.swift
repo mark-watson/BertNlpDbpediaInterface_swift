@@ -14,6 +14,8 @@ public class BERT {
     static let url = try! MLModel.compileModel(at: URL(fileURLWithPath: "Sources/BertNlpDbpediaInterface_swift/Resources/BERTQAFP16.mlmodel"))
     static let aModel = try! MLModel(contentsOf: url)
     
+    public init() {}
+    
     var bertModel: BERTQAFP16 = BERTQAFP16(model: aModel)
     public func findAnswer(for question: String, in document: String) -> Substring {
         // Prepare the input for the BERT model.
